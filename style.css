@@ -1,0 +1,163 @@
+html {
+  height:100%;
+ }
+ body,html {
+  margin:0;
+  padding:0;
+  background:#faf8ef;
+  color:#776e65;
+  font-size:18px;
+  overflow:hidden;/* 内容会被修剪，并且其余内容不可见 */
+ }
+ body {
+  height:100%;
+  overflow:hidden;
+  width:500px;
+  margin:0 auto;
+ }
+:not([class*="icon"]):not(i){   /*   包含icon的class css选择器  */
+  font-family: Helvetica,Tahoma,Arial,"PingFang SC",Hiragana,"Microsoft YaHei" !important;
+}
+.heading{
+  margin:0 auto;
+	width:100%;
+	display:block;
+	text-align: center;
+}
+.heading:after {
+  content:"";
+  display:block;
+  clear:both;/*clear CSS 属性指定一个元素是否必须移动(清除浮动后)到在它之前的浮动元素下面。both元素:被向下移动用于清除之前的左右浮动。*/
+ }
+ h1.title {
+  font-size:50px;
+  font-weight:700;
+  margin:0;
+  display:block;
+  float:left;
+  color:rgb(124, 163, 214);
+ }
+a{
+  color:#776e65;
+  font-weight:700;
+  text-decoration:underline;
+  cursor:pointer;
+}
+.scores-container {
+  display:block;
+  text-align:right;
+  margin: 0 auto ;
+ }
+.score,.best{
+  position:relative;
+  display:inline-block;
+  background:#e6e7ed;
+  padding:15px 25px;
+  font-size:25px;
+  height:25px;
+  line-height:47px;
+  font-weight:700;
+  border-radius:3px;
+  color:#4c4f5b;
+  margin-top:8px;
+  text-align:center;
+}
+.best:after,
+.score:after {
+ position:absolute;
+ width:100%;
+ top:10px;
+ left:0;
+ text-transform:uppercase;/*这个关键字强制所有字符被转换为大写。*/
+ font-size:13px;
+ line-height:13px;
+ text-align:center;
+ color:#4c4f5b;
+}
+.score:after {
+  content:"分数";
+}
+.best:after {
+  content:"最高";/*在伪元素后面添加内容*/
+}
+.game-container {
+  margin-top:4%;
+  position:relative;
+  padding:15px;
+  touch-action:none;
+  background:#40414b;
+  border-radius:6px;
+  width:500px;
+  height:500px;
+  box-sizing:border-box;
+ }
+.grid-container {
+  position:absolute;
+  z-index:1;
+ }
+ .grid-rows {
+  margin-bottom:15px;
+ }
+ .grid-rows:last-child {
+  margin-bottom:0;
+ }
+ .grid-rows:after {
+  content:"";
+  display:block;
+  clear:both;
+ }
+ .grid-cell {
+  width:106.25px;
+  height:106.25px;
+  margin-right:15px;
+  float:left;
+  border-radius:3px;
+  background:#63646e;
+ }
+ .grid-cell:last-child {
+  margin-right:0;
+ }
+.newGameButton{
+ margin-top:15px;
+ background:#63646e;
+ border-radius:3px;
+ padding:0 20px;
+ text-decoration:none;/*防止出现下划线，影响美观*/
+ color:#f9f6f2;
+ height:40px;
+ line-height:42px;
+ cursor:pointer;/*设置悬浮属性，这里是设置悬浮时为手*/
+ display:block;
+ text-align:center;
+ float:right;
+}
+.number-cell{
+  width:106.25px;
+  height:106.25px;
+  margin-right:20px;
+  float:left;
+  border-radius:3px;
+	text-align:center;
+  position:absolute;
+  z-index: 50;
+}
+.number-cell:last-child{
+  margin-right: 0;
+}
+.gameOver{
+  display:none;
+  position:absolute;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  background:rgba(238,228,218,.73);
+  z-index:100;/*设置显示优先级*/
+  padding-top:40px;
+  text-align:center;
+}
+.gameOver p{
+   color: #4c4f5b;
+   font-size: 50px;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
